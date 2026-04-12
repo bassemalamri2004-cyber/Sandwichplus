@@ -1,0 +1,17 @@
+<body style="text-align: center; font-family: sans-serif; background-color: #f4f4f4; padding: 20px;">
+    <h1 style="color: #e67e22;">🥪 منيو ساندوتش بلس 🥪</h1>
+    {% for dish in dishes %}
+    <div
+        style="background: white; border-radius: 15px; padding: 20px; margin: 15px auto; max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+        {% if dish.image %}
+        <img src="{{ dish.image.url }}"
+            style="width: 200px; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 10px;">
+        {% endif %}
+
+        <h2 style="margin: 0; color: #333;">{{ dish.name }}</h2>
+        <p style="color: #666;">{{ dish.description }}</p>
+        <p style="color: #27ae60; font-weight: bold; font-size: 1.2em;">السعر: {{ dish.price }} ريال</p>
+    </div>
+    {% endfor %}
+</body>
